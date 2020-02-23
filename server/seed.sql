@@ -49,3 +49,5 @@ INSERT INTO users(username, email, password, avatar_url, isPublic)
 INSERT INTO garments(user_id, garment_name, description, img_url, QR_id, prime_location) 
         VALUES(1, 'White shirt', 'Just a white shirt', 'https://www.elevennewyork.com/wp-content/uploads/2018/02/02_white-tee_back.jpg', 1, 'Cartoon Network');
 
+
+
