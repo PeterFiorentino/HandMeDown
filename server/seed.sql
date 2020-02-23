@@ -20,6 +20,7 @@ CREATE TABLE QR (
 CREATE TABLE garments (
     id SERIAL PRIMARY KEY, 
     user_id INT REFERENCES users (id),
+    garment_name VARCHAR NOT NULL,
     description VARCHAR NOT NULL,
     img_url VARCHAR NOT NULL,
     rating INT,
@@ -38,7 +39,12 @@ CREATE TABLE history (
     isPublic BOOLEAN
 );
 
-INSERT INTO users(username, email, password, )
+INSERT INTO users(username, email, password, avatar_url, isPublic) 
+        VALUES('johnnyBravo', 'jbravo@cnetwork.com', '0123', 'http://localhost:3100/public/avatar_url/johnnyBravo.jpeg', 'true'),
+            ('bananaoutfit', 'bananaoutfit@random.com', '1234', 'http://localhost:3100/public/avatar_url/bananaoutfit.jpeg', 'true'),
+            ('simbawindsor', 'simbawindsor@random.com', '2345', 'http://localhost:3100/public/avatar_url/simbawindsor.jpeg', 'true'),
+            ('avengergating', 'avengergating@random.com', '3456', 'http:localhost:3100/public/avatar_url/avengergating.jpeg', 'true')
+
 
 
 
