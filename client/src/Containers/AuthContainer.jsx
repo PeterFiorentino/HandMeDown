@@ -29,18 +29,6 @@ class AuthContainer extends Component {
         }
     }
 
-    renderSignUp = () => {
-        const { username, password, avatar_url } = this.state
-        return (
-        <SignupForm 
-            handleChange={this.handleChange}
-            username={username}
-            password={password}
-            signupUser={this.signupUser}
-            avatar_url={avatar_url}
-        />)
-    }
-
     loginUser = async  () => {
         // make network request to /auth/signup to register user
         try {
@@ -52,6 +40,18 @@ class AuthContainer extends Component {
         } catch (err) {
             console.log(err)
         } 
+    }
+
+    renderSignUp = () => {
+        const { username, password, avatar_url } = this.state
+        return (
+        <SignupForm 
+            handleChange={this.handleChange}
+            username={username}
+            password={password}
+            signupUser={this.signupUser}
+            avatar_url={avatar_url}
+        />)
     }
 
     renderLogin = () => {
@@ -71,14 +71,12 @@ class AuthContainer extends Component {
             <div className='main'>  
                 {
                     isUserLoggedIn
-                    ? <Redirect to="/profile" />
+                    ? <Redirect to="/user/wardrobe" />
                     : (
-                    
                         <Switch>
                             <Route path="/login" render={this.renderLogin} />
                             <Route path="/signup" render={this.renderSignUp} />
-                        </Switch>
-                        
+                        </Switch> 
                     )
                 }
             </div>
