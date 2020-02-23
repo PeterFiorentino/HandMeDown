@@ -35,7 +35,7 @@ If you completed all of your tasks, offer to aid others in completing their task
 If stuck on an issue somewhere, limit yourself to 30 minutes before asking for help. Reach out for assistance sooner instead of leaving work to be picked up by others later.
 
 
-Database Tables: 
+## Database Tables: 
 - **Users**
 
   | Method | Endpoint     | Description           | Body Data                |
