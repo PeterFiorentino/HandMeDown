@@ -33,3 +33,7 @@ Alert the team if you're going to be absent or late. You are still responsible f
 If you completed all of your tasks, offer to aid others in completing their tasks. We should provide assistance to each other in a productive and sympathetic manner.
 
 If stuck on an issue somewhere, limit yourself to 30 minutes before asking for help. Reach out for assistance sooner instead of leaving work to be picked up by others later.
+
+
+Database Tables: 
+
