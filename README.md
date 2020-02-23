@@ -42,3 +42,6 @@ A user can create an original QR code for each individual garment. The code can 
   | POST   | `/history`               | Add a new garment history     | `history_body`, `user_id`, `garment_id`, `timestamp`, `location`  |
   | GET | `/history/:garment_id` | Get all of the history for a garment| n/a |
   | POST   | `/History`               | Add a new garment history     | `history_body`, `user_id`, `garment_id`, `timestamp`, `location`  |
+
+
+![Wireframes](./Assests/Wireframes.md)
