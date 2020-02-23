@@ -23,7 +23,6 @@ CREATE TABLE garments (
     garment_name VARCHAR NOT NULL,
     description VARCHAR NOT NULL,
     img_url VARCHAR NOT NULL,
-    rating INT,
     QR_id INT,
     prime_location VARCHAR NOT NULL
 );
@@ -43,9 +42,10 @@ INSERT INTO users(username, email, password, avatar_url, isPublic)
         VALUES('johnnyBravo', 'jbravo@cnetwork.com', '0123', 'http://localhost:3100/public/avatar_url/johnnyBravo.jpeg', 'true'),
             ('bananaoutfit', 'bananaoutfit@random.com', '1234', 'http://localhost:3100/public/avatar_url/bananaoutfit.jpeg', 'true'),
             ('simbawindsor', 'simbawindsor@random.com', '2345', 'http://localhost:3100/public/avatar_url/simbawindsor.jpeg', 'true'),
-            ('avengergating', 'avengergating@random.com', '3456', 'http:localhost:3100/public/avatar_url/avengergating.jpeg', 'true')
+            ('avengergating', 'avengergating@random.com', '3456', 'http:localhost:3100/public/avatar_url/avengergating.jpeg', 'true');
 
 
 
-
+INSERT INTO garments(user_id, garment_name, description, img_url, QR_id, prime_location) 
+        VALUES(1, 'White shirt', 'Just a white shirt', 'https://www.elevennewyork.com/wp-content/uploads/2018/02/02_white-tee_back.jpg', 1, 'Cartoon Network');
 
