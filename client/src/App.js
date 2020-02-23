@@ -3,9 +3,13 @@ import { Route, Switch } from 'react-router-dom';
 import axios from 'axios';
 
 import './App.css';
-import AuthContainer from './Containers/AuthContainer'
+
+import PrivateRoute from './Components/PrivateRoute';
+import AuthContainer from './Containers/AuthContainer';
+
 import NavBar from './Components/NavBar';
 import Home from './Components/Home';
+import Wardrobe from './Components/Wardrobe';
 import About from './Components/About';
 
 class App extends React.Component {
@@ -46,6 +50,10 @@ class App extends React.Component {
     return <AuthContainer isUserLoggedIn={isUserLoggedIn} setUser={this.setUser} />
   }
 
+  renderWardrobe = (routeprops) => {
+    return <Wardrobe routeprops={routeprops} user={this.state.user} />
+  }
+
   logoutUser = async () => {
     console.log('logging out user');
     try {
@@ -70,6 +78,8 @@ class App extends React.Component {
         />
 
         <Switch>
+          <PrivateRoute path='/user/wardrobe' render={this.renderWardrobe} isUserLoggedIn={this.state.isUserLoggedIn} />
+
           <Route path='/login' render={this.renderAuthContainer} />
           <Route path='/signup' render={this.renderAuthContainer} />
           <Route path='/about' component={About} />
