@@ -25,6 +25,16 @@ class Wardrobe extends Component {
         }
     }
 
+    handleGarmentSubmit = async () => {
+        let { user } = this.props
+        let URL = ``
+        try {
+            await axios.post(URL)
+        } catch (err) {
+            console.log(err)
+        }
+    }
+
     render () {
         const { user } = this.props;
         const { garments } = this.state;
@@ -41,6 +51,15 @@ class Wardrobe extends Component {
         });
         return (
             <div className='main'>
+                <div className='header'>
+                    <h3></h3>
+                    <div className='logo'>
+
+                    </div>
+                    <div>
+
+                    </div>
+                </div>
                 <div className='garments-container'>
                     {garmentComponents}
                 </div>

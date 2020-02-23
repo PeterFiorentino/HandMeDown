@@ -50,8 +50,10 @@ import React, { Component } from 'react'
 
         historyPosts.forEach(post => {})
         return (
-            <div>
-                
+            <div className='main'>
+                <div className='history-container'>
+                    {historyPosts}
+                </div>
             </div>
         )
     }
