@@ -11,6 +11,7 @@ import NavBar from './Components/NavBar';
 import Home from './Components/Home';
 import Wardrobe from './Components/Wardrobe';
 import About from './Components/About';
+import Garment from './Components/Garment';
 
 class App extends React.Component {
   state = {
@@ -54,6 +55,10 @@ class App extends React.Component {
     return <Wardrobe routeprops={routeprops} user={this.state.user} />
   }
 
+  renderGarment = (routeprops) => {
+    return <Garment routeprops={routeprops} user={this.state.user} />
+  }
+
   logoutUser = async () => {
     console.log('logging out user');
     try {
@@ -79,6 +84,7 @@ class App extends React.Component {
 
         <Switch>
           <PrivateRoute path='/user/wardrobe' render={this.renderWardrobe} isUserLoggedIn={this.state.isUserLoggedIn} />
+          <PrivateRoute path='/user/wardrobe/:id' render={this.renderGarment} isUserLoggedIn={this.state.isUserLoggedIn} />
 
           <Route path='/login' render={this.renderAuthContainer} />
           <Route path='/signup' render={this.renderAuthContainer} />
