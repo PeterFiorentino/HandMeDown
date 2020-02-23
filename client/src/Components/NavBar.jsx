@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
 const NavBar = ({ logoutUser, isUserLoggedIn, user }) => {
     if (isUserLoggedIn) {
         return (
-            <div>
-                <nav>
-
-                </nav>
-            </div>
+            <nav>
+                <Link to='/user/wardrobe'>Wardrobe</Link>
+                <Link to='/about'>About</Link>
+                <button className='logout-button' onClick={logoutUser}>Log Out</button>
+            </nav>
         )
     }
 
