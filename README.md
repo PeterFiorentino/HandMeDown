@@ -36,4 +36,32 @@ If stuck on an issue somewhere, limit yourself to 30 minutes before asking for h
 
 
 Database Tables: 
+- **Users**
 
+  | Method | Endpoint     | Description           | Body Data                |
+  | ------ | ------------ | --------------------- | ------------------------ |
+  | GET    | `/users`     | Get all users         | n/a                      |
+  | GET    | `/users/:id` | Get single user by id | n/a                      |
+  | POST   | `/users/`    | Add new user          | `avatar_url`, `username`, `password` |
+  | PATCH  | `/users/:id` | Edit a user's info    | `avatar_url`, `username`, or `password` |
+  | DELETE | `/users/:id` | Delete a user         | n/a                      |
+
+- **Garments**
+
+  | Method | Endpoint  | Description    | Body Data    |
+  | ------ | --------- | -------------- | ------------ |
+  | GET    | `/garments` | Get all garments | n/a          |
+  | GET    |  `/garments/:id ` | Get single garment by id | n/a |
+  | POST   | `/garments` | Add new garment  | `garment_name`, `owner_id`, `garment_image`, `location`  |
+  | PATCH  | `/garments` | Edit a single garment | `garment_name`, `owner_id`, `garments_image`, or `location` |
+  | GET    | `/garments/users/:user_id` | Get all the garments for a single user | n/a |
+  
+
+- **History**
+
+  | Method | Endpoint                  | Description                           | Body Data                            |
+  | ------ | ------------------------- | ------------------------------------- | ------------------------------------ |
+  | GET    | `/history/:id` | Get an individual history post | n/a                                  |
+  | POST   | `/history`               | Add a new garment history     | `history_body`, `user_id`, `garment_id`, `timestamp`, `location`  |
+  | GET | `/history/:garment_id` | Get all of the history for a garment| n/a |
+  | POST   | `/History`               | Add a new garment history     | `history_body`, `user_id`, `garment_id`, `timestamp`, `location`  |
