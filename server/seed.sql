@@ -20,6 +20,7 @@ CREATE TABLE users (
 CREATE TABLE garments (
     id SERIAL PRIMARY KEY, 
     user_id INT REFERENCES users (id),
+    garment_name VARCHAR NOT NULL,
     category VARCHAR NOT NULL,
     caption VARCHAR NOT NULL,
     img_url VARCHAR NOT NULL,
@@ -45,11 +46,11 @@ INSERT INTO users(username, email, password, avatar_url, isPublic)
               ('avengergating', 'avengergating@random.com', '3456', 'http:localhost:3100/public/avatar_url/avengergating.jpeg', 'true')
 
 
-INSERT INTO garments(user_id, category, caption, img_url, prime_location)
-        VALUES(4, 'shirt', 'My favorite shirt', 'http://localhost:3100/public/image_url/luckBlueShirt.jpeg', 'New York, NY'),
-              (2, 'dress', 'I love this dress', 'http://localhost:3100/public/image_url/favedress.jpeg', 'Denver, CO'),
-              (1, 'jeans', 'good jeans', 'http://localhost:3100/public/image_url/jeans.jpeg', 'San Francisco, CA'),
-              (3, 'jacket', 'Best jacket', 'http://localhost:3100/public/image_url/jacket.jpeg', 'Chicago, IL')
+INSERT INTO garments(user_id, garment_name, category, caption, img_url, prime_location)
+        VALUES(4, 'luckyblueshirt','shirt', 'My favorite shirt', 'http://localhost:3100/public/image_url/luckBlueShirt.jpeg', 'New York, NY'),
+              (2, 'favedress', 'dress', 'I love this dress', 'http://localhost:3100/public/image_url/favedress.jpeg', 'Denver, CO'),
+              (1, 'gojeans', 'jeans', 'good jeans', 'http://localhost:3100/public/image_url/jeans.jpeg', 'San Francisco, CA'),
+              (3, 'leatherjacket', 'jacket' 'Best jacket', 'http://localhost:3100/public/image_url/jacket.jpeg', 'Chicago, IL')
 
 INSERT INTO history (user_id, garment_id, location, time_created, body, img_url, isPublic) 
         VALUES(1, 3, 'Barcelona, Spain', '2019-10-23, 10:15:30', 'I wore these jeans when I went to visit barcelona', 'http://localhost:3100/public/image_url/jeans.jpeg', 'true'),
