@@ -1,0 +1,7 @@
+![landingPage](landing_page.jpg)
+![landingPageLogIn](landing_page_login_form.jpg)
+![landingPageSignUp](landing_page_sign_in_form.jpg)
+![garmentPage](garment_page.jpg)
+![garmentPageHor](garment_page_horizontal.jpg)
+![wardobe](wadrobe_page.jpg)
+![wardrobe_filtered](wardrobe_filtered_page.jpg)
