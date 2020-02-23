@@ -1,5 +1,7 @@
 # HandMeDown
-Problem Statement: Clothes are being made of cheaper materials that do not last as long. As a consumer, purchasing cheaper clothes is appealing, so sustainable clothing has been tossed to the side. 
+
+# Problem Statement: 
+Clothes are being made of cheaper materials that do not last as long. As a consumer, purchasing cheaper clothes is appealing, so sustainable clothing has been tossed to the side. 
 
 A social media engagement project to promote sustainability in the fashion industry and encourage the preservation of lineage through garment, thus incentivizing customers to buy more sustainable clothing so they can preserve them. 
 
