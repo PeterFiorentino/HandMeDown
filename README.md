@@ -65,3 +65,29 @@ If stuck on an issue somewhere, limit yourself to 30 minutes before asking for h
   | POST   | `/history`               | Add a new garment history     | `history_body`, `user_id`, `garment_id`, `timestamp`, `location`  |
   | GET | `/history/:garment_id` | Get all of the history for a garment| n/a |
   | POST   | `/History`               | Add a new garment history     | `history_body`, `user_id`, `garment_id`, `timestamp`, `location`  |
+
+WIREFRAMES:
+
+Database Wireframe:
+https://drive.google.com/file/d/1dv3laYaXGkBA00WSy0K0tH5r5yHUAko6/view?usp=sharing
+
+Landing Page Wireframe:
+https://drive.google.com/file/d/1flf6ns6k8gLZc27aBCHPurbQm5H9D4GT/view?usp=sharing
+
+Landing Page Login Wireframe:
+https://drive.google.com/file/d/1JeySDN8VZQag8gZjVc7NqamkZS_86K88/view?usp=sharing
+
+Landing Page Sign Up Wireframe:
+https://drive.google.com/file/d/1rm2BXXWwcFdTN3LDlh16AHjORSOAvbT5/view?usp=sharing
+
+Wardrobe Page:
+https://drive.google.com/file/d/1yZqMGviAQWr7V2Bg89nH5O3kxxxlhSQw/view?usp=sharing
+
+Filtered Wardrobe Page:
+https://drive.google.com/file/d/1c0ROxA5xYgRlxAL0nsHEhWFcQYOrBprJ/view?usp=sharing
+
+Garment Page:
+https://drive.google.com/file/d/1DXn6J2yAFJ11JyN4ek7ULjp_9zHpjn1K/view?usp=sharing
+
+Garment Total History Page:
+https://drive.google.com/file/d/1aVX3USunVr6AXZd2zfZ3vywQNBtb7rpm/view?usp=sharing
