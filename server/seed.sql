@@ -61,6 +61,3 @@ INSERT INTO history (user_id, garment_id, location, time_created, body, img_url,
                (4, 1, 'Cape Town, South Africa', '2020-02-23, 12:11:59', 'Great time with a good shirt', 'http://localhost:3100/public/image_url/luckBlueShirt.jpeg', 'true')
 
 
-INSERT INTO garments(user_id, garment_name, description, img_url, QR_id, prime_location) 
-        VALUES(1, 'White shirt', 'Just a white shirt', 'https://www.elevennewyork.com/wp-content/uploads/2018/02/02_white-tee_back.jpg', 1, 'Cartoon Network');
-
