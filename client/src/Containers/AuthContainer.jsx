@@ -9,7 +9,9 @@ class AuthContainer extends Component {
     state = {
         username: '',
         password: '',
-        avatar_url: ''
+        avatar_url: '',
+        email: '',
+        isPublic: true
     }
 
     handleChange = (e) => {
@@ -43,12 +45,13 @@ class AuthContainer extends Component {
     }
 
     renderSignUp = () => {
-        const { username, password, avatar_url } = this.state
+        const { username, password, avatar_url, email } = this.state
         return (
         <SignupForm 
             handleChange={this.handleChange}
             username={username}
             password={password}
+            email={email}
             signupUser={this.signupUser}
             avatar_url={avatar_url}
         />)

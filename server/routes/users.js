@@ -40,30 +40,6 @@ router.get('/:id', async (req, res)  => {
   }
 });
 
-router.post('/', async (req, res) => {
-  let username = req.body.username
-  let email = req.body.email
-  let password = req.body.password
-  let avatar_url = req.body.avatar_url
-  let isPublic = req.body.isPublic
-  try {
-    let newUser = await db.one(`INSERT INTO users(username, email, password, avatar_url, isPublic) VALUES ($1, $2, $3, $4, $5) RETURNING *`, [username, email, password, avatar_url, isPublic]);
-    res.json({
-      message: "Success",
-      payload: {
-        newUser: newUser
-      }, 
-      error: null
-    })
-  } catch (error) {
-    res.json({
-      message: "Could not add new user",
-      payload: null,
-      error: error
-    })
-  }
-});
-
 router.patch('/:id/avatar_url', async (req, res) => {
   try {
       let avatar_url = req.body.avatar_url;
@@ -160,4 +136,5 @@ router.delete('/:id', async (req, res) => {
 })
 
 
-module.exports = router;
+
+module.exports = router
