@@ -53,6 +53,7 @@ router.get('/:id', async (req, res)  => {
   }
 });
 
+
 router.post('/', upload.single('avatar_url'), async (req, res) => {
   let username = req.body.username
   let email = req.body.email
@@ -77,6 +78,7 @@ router.post('/', upload.single('avatar_url'), async (req, res) => {
     })
   }
 });
+
 
 router.patch('/:id/avatar_url', async (req, res) => {
   try {
@@ -174,4 +176,5 @@ router.delete('/:id', async (req, res) => {
 })
 
 
-module.exports = router;
+
+module.exports = router
