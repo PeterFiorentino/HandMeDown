@@ -1,7 +1,7 @@
--- DROP DATABASE if exists handmedown;
--- CREATE DATABASE handmedown;
+DROP DATABASE if exists handmedown;
+CREATE DATABASE handmedown;
 
--- \c handmedown;
+\c handmedown;
 
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
@@ -12,10 +12,10 @@ CREATE TABLE users (
     isPublic BOOLEAN
 );
 
--- CREATE TABLE QR (
---     id SERIAL PRIMARY KEY,
---     img_url VARCHAR NOT NULL
--- );
+CREATE TABLE QR (
+    id SERIAL PRIMARY KEY,
+    img_url VARCHAR NOT NULL
+);
 
 CREATE TABLE garments (
     id SERIAL PRIMARY KEY, 
@@ -24,9 +24,7 @@ CREATE TABLE garments (
     category VARCHAR NOT NULL,
     caption VARCHAR NOT NULL,
     img_url VARCHAR NOT NULL,
-
-    -- QR_id INT REFERENCES QR(id),
-
+    QR_id INT REFERENCES QR(id),
     prime_location VARCHAR NOT NULL
 );
 
@@ -40,6 +38,7 @@ CREATE TABLE history (
     img_url VARCHAR NOT NULL,
     isPublic BOOLEAN
 );
+
 
 INSERT INTO users(username, email, password, avatar_url, isPublic) 
         VALUES('johnnyBravo', 'jbravo@cnetwork.com', '0123', 'http://localhost:3100/public/avatar_url/johnnyBravo.jpeg', 'true'),
@@ -59,6 +58,7 @@ INSERT INTO history (user_id, garment_id, location, time_created, body, img_url,
                (2, 2, 'Istanbul, Turkey', '2019-07-30, 02:30:00', 'Summer in Istanbul', 'http://localhost:3100/public/image_url/favedress.jpeg', 'true'),
                (3, 4, 'St. Tropez, France', '2019-09-10, 05:10:40', 'Perfect jacket for a beautiful place', 'http://localhost:3100/public/image_url/jacket.jpeg', 'true'),
                (4, 1, 'Cape Town, South Africa', '2020-02-23, 12:11:59', 'Great time with a good shirt', 'http://localhost:3100/public/image_url/luckBlueShirt.jpeg', 'true');
+
 
 
 
