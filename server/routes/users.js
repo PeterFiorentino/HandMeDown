@@ -1,6 +1,19 @@
 var express = require('express');
 var router = express.Router();
 const db = require('./db');
+const multer = require('multer');
+
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, './public/images/avatar_url')
+  },
+  filename: function (req, file, cb) {
+    let name = file.originalname
+    cb(null, name)
+  }
+})
+
+const upload = multer({ storage: storage })
 
 router.get('/', async (req, res) => {
   try{
@@ -40,11 +53,12 @@ router.get('/:id', async (req, res)  => {
   }
 });
 
-router.post('/', async (req, res) => {
+router.post('/', upload.single('avatar_url'), async (req, res) => {
   let username = req.body.username
   let email = req.body.email
   let password = req.body.password
-  let avatar_url = req.body.avatar_url
+  let avatar_url = `http://localhost:3100/upload/avatar_url/${req.body.avatar_url.replace('public/', '')}`
+  console.log('avatar', avatar_url)
   let isPublic = req.body.isPublic
   try {
     let newUser = await db.one(`INSERT INTO users(username, email, password, avatar_url, isPublic) VALUES ($1, $2, $3, $4, $5) RETURNING *`, [username, email, password, avatar_url, isPublic]);
