@@ -5,7 +5,8 @@ const SignupForm = ({
   password,
   handleChange,
   signupUser,
-  avatar_url
+  avatar_url,
+  email
 }) => {
 
   const handleSubmit = (e) => {
@@ -24,6 +25,14 @@ const SignupForm = ({
           name="username"
           value={username}
           placeholder="username"
+          onChange={handleChange}
+        /><br/>
+        <input
+          className='signup-input'
+          type="text"
+          name="email"
+          value={email}
+          placeholder="email"
           onChange={handleChange}
         /><br/>
         <i class="fas fa-lock"></i>{"  "}
