@@ -6,10 +6,14 @@ const cors = require('cors');
 const session = require('express-session');
 const passport = require('./auth/passport');
 
+
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const garmentsRouter = require('./routes/garments');
 const authRouter = require('./routes/auth');
+const garmentsRouter = require('./routes/garments');
+const historiesRouter = require('./routes/histories');
+
 
 var app = express();
 
@@ -33,5 +37,6 @@ app.use('/', indexRouter);
 app.use('/auth', authRouter);
 app.use('/users', usersRouter);
 app.use('/garments', garmentsRouter);
+app.use('/histories', historiesRouter);
 
 module.exports = app;
