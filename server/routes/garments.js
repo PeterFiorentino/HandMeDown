@@ -43,12 +43,12 @@ router.get('/:id', async (req, res)  => {
   router.post('/users/:user_id', async (req, res) => {
     let user_id = req.params.user_id
     let garment_name = req.body.garment_name
-    let description = req.body.description
+    let category = req.body.category
+    let caption = req.body.caption
     let img_url = req.body.img_url
-    let QR_id = req.body.QR_id
     let prime_location = req.body.prime_location
     try {
-      let newGarment = await db.one(`INSERT INTO garments(user_id, garment_name, description, img_url, QR_id, prime_location) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *`, [user_id, garment_name, description, img_url, QR_id, prime_location]);
+      let newGarment = await db.one(`INSERT INTO garments(user_id, garment_name, category, caption, img_url, prime_location) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *`, [user_id, garment_name, category, caption, img_url, prime_location]);
       res.json({
         message: "Success",
         payload: {
