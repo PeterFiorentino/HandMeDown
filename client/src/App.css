@@ -11,3 +11,56 @@ body {
 .App {
   text-align: center;
 }
+
+img {
+  height: 10%;
+  width: 10%;
+}
+
+.garment-form, .user-form {
+  text-align: left;
+  padding: 10%;
+  border: 2px solid black;
+}
+
+.garment-input, .signup-input {
+  margin-bottom: 1em;
+  width: 20em;
+  height: 2em;
+}
+
+.submit-button {
+  margin-top: 1em;
+  height: 2em;
+  width: 17em; 
+  font-size: 15px;
+  color: white;
+  background-color:rgb(93, 106, 223);
+  border-radius: 3px;
+}
+
+.garment-nav {
+  display:flex;
+}
+
+h4 {
+  background-color: gray;
+  margin: 0.5%;
+  padding: 0.5em;
+}
+
+h4:hover {
+  background-color: rgb(83, 83, 83);
+}
+
+.user {
+  display: flex;
+}
+
+.username {
+  align-items: center;
+}
+
+h3 {
+  padding-left: 0.5%
+}

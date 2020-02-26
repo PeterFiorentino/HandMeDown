@@ -8,6 +8,7 @@ GROUP 1: Hupaul Camacho, Douglas MacKrell, Johanne Enama, Peter Fiorentino
 //    external
 const express = require('express');
 const router = express.Router();
+const db = require('./db')
 // const multer = require('multer');
 
 // const storage = multer.diskStorage({
@@ -115,31 +116,54 @@ router.post("/api/", async (req, res, next) => {
 });
 
 //    rewriteHistory: edit a history by id
-router.patch("/api/:history_id", async (req, res, next) => {
-    try {
-        const userId = req.body.user_id;
-        const garmentId = req.body.garment_id;
-        const location = req.body.location;
-        const body = req.body.body;
-        const imageUrl = req.body.img_url;
-        const isPublic = req.body.isPublic;
+// router.patch("/api/:history_id", async (req, res, next) => {
+//     try {        
+//         let query = `UPDATE history SET `
+//         if (req.body.user_id) {
+//             query += `user_id = ${req.body.user_id},`
+//         }
+//         if (req.body.garment_id) {
+//             query += `garment_id= ${req.body.garment_id},`
+//         }
+//         if (req.body.location) {
+//             query += `location = ${req.body.location},`
+//         }
+//         if (req.body.body) {
+//             query += `body = ${req.body.body},`
+//         }
+//         if (req.body.img_url) {
+//             query += `image_url = ${req.body.img_url},`
+//         }
+//         if (req.body.isPublic) {
+//             query += `isPublic = ${req.body.isPublic},`
+//         }
+        
+//         query = query.slice(0, query.length -1);
+//         // if(req.body.logout){
+//         //     query += ` loggedIn = ${false}`
+//         // }
+//         query+= ` WHERE id = ${req.params.history_id} RETURNING *`
+//         console.log(query)
+    
+//         let editedHistory = await  db.one(query)
 
-        const response = await rewriteHistory({ userId, garmentId, location, body, imageUrl, isPublic });
-        res.json({
-            status: "success",
-            message: `post ${postId} edited`,
-            payload: response
-        });
+//         res.json({
+//             status: "Successfully edited history",
+//             payload: editedHistory,
+//             error: null
 
-    } catch (err) {
-        res.json({
-            status: "failure",
-            message: "Oops! All Errors!",
-            payload: null
-        })
-        throw err;
-    }
-});
+//         })
+
+//     } catch (err) {
+//         res.json({
+//             status: "failure",
+//             message: "Oops! All Errors!",
+//             payload: null
+//         })
+//         throw err;
+//     }
+// });
+
 
 
 /* EXPORT */
