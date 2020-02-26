@@ -1,10 +1,20 @@
 import React, { Component, Profiler } from 'react'
+import Popup from "reactjs-popup";
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 
 class Wardrobe extends Component {
     state = {
-        garments: []
+        garments: [],
+        garment_name: '',
+        category: '',
+        caption: '',
+        img_url: '',
+        prime_location: '',
+        username: '',
+        password: '',
+        avatar_url: '',
+        email: ''
     }
 
     componentDidMount = () => {
@@ -13,7 +23,7 @@ class Wardrobe extends Component {
 
     getUserGarments = async () => {
         let { user } = this.props
-        let URL = ``
+        let URL = `/garments/wardrobe/${user.id}`
         try {
             let results = await axios.get(URL)
             console.log(results.data.payload)
@@ -25,40 +35,177 @@ class Wardrobe extends Component {
         }
     }
 
-    handleGarmentSubmit = async () => {
+    handleChange = (e) => {
+        e.preventDefault()
+        this.setState({
+            [e.target.name]: e.target.value
+        })
+    }
+
+    handleGarmentSubmit = async (e) => {
+        e.preventDefault()
         let { user } = this.props
-        let URL = ``
+        let { garment_name, caption, category, img_url, prime_location } = this.state
+        let URL = `/garments/user/${user.id}`
+        let data = {
+            garment_name: garment_name,
+            category: category,
+            caption: caption,
+            img_url: img_url,
+            prime_location: prime_location
+        }
         try {
-            await axios.post(URL)
+            await axios.post(URL, data)
         } catch (err) {
             console.log(err)
         }
+        this.getUserGarments()
     }
 
     render () {
         const { user } = this.props;
-        const { garments } = this.state;
+        const { 
+            garments, 
+            garment_name, 
+            category, 
+            caption, 
+            img_url, 
+            prime_location,
+            username,
+            avatar_url,
+            password,
+            email
+        } = this.state;
+
         const garmentComponents = [];
         garments.forEach(garment => {
             garmentComponents.push(
                 <Link>
                     <div className='garment'>
-
+                        <img src={garment.img_url} height='200'/>
+                        <p>{garment.garment_name}</p>
+                        <p>{garment.category}</p>
+                        <p>{garment.caption}</p>
                     </div>
                 </Link>
-                
             )
         });
         return (
             <div className='main'>
                 <div className='header'>
-                    <h3></h3>
-                    <div className='logo'>
-
+                    <div className='user'>
+                        <img src={user.avatar_url} />
+                        <h3 className='username'>{user.username}'s Wardrobe</h3>
                     </div>
-                    <div>
-
-                    </div>
+                    
+                    
+                    <nav className='garment-nav'>
+                        <Popup trigger={<h4>Add A New Garment</h4>} 
+                        modal
+                        position="right center">
+                            <div className='garment-form'>
+                                <h3>Add New Garment</h3>
+                                <form onSubmit={this.handleGarmentSubmit}>
+                                    <b>Name</b><br/>
+                                    <input
+                                        className='garment-input'
+                                        type="text"
+                                        name="garment_name"
+                                        value={garment_name}
+                                        placeholder="Garment Name"
+                                        onChange={this.handleChange}
+                                    /><br/>
+                                    <b>Category</b><br/>
+                                    <input
+                                        className='garment-input'
+                                        type="text"
+                                        name="category"
+                                        value={category}
+                                        placeholder="Category"
+                                        onChange={this.handleChange}
+                                    /><br/>
+                                    <b>Caption</b><br/>
+                                    <textarea 
+                                        name="caption"
+                                        value={caption} 
+                                        // cols="50"
+                                        onChange={this.handleChange} 
+                                        placeholder="Caption"
+                                    /><br/>
+                                    <b>Garment Image</b><br/>
+                                    <input
+                                        className='garment-input'
+                                        type="text"
+                                        name="img_url"
+                                        value={img_url}
+                                        placeholder="image url"
+                                        onChange={this.handleChange}
+                                    /><br/>
+                                    <b>Location</b><br/>
+                                    <input
+                                        className='garment-input'
+                                        type="text"
+                                        name="prime_location"
+                                        value={prime_location}
+                                        placeholder="Location"
+                                        onChange={this.handleChange}
+                                    /><br/>
+                                    <input type='submit' className='submit-button' value='submit' />
+                                </form>
+                            </div>
+                        </Popup>
+                        
+                        <Popup trigger={<h4>Settings</h4>} 
+                        modal
+                        position="right center">
+                            <div className='user-form'>
+                                <h3>User Info</h3>
+                                <b>Username</b><br/>
+                                <form >
+                                    <i class="fas fa-user"></i>{"  "}
+                                    <input
+                                      className='signup-input'
+                                      type="text"
+                                      name="username"
+                                      value={username}
+                                      placeholder="username"
+                                      onChange={this.handleChange}
+                                    /><br/>
+                                    <b>Email</b><br/>
+                                    <input
+                                      className='signup-input'
+                                      type="text"
+                                      name="email"
+                                      value={email}
+                                      placeholder="email"
+                                      onChange={this.handleChange}
+                                    /><br/>
+                                    <i class="fas fa-lock"></i>{"  "}
+                                    <b>Password</b><br/>
+                                    <input
+                                      className='signup-input'
+                                      type="password"
+                                      name="password"
+                                      value={password}
+                                      placeholder="••••••••"
+                                      onChange={this.handleChange}
+                                    /><br/>
+                                    <i class="fas fa-image"></i>{"  "}
+                                    <b>Avatar</b><br/>
+                                    <input
+                                      className='signup-input'
+                                      type="text"
+                                      name="avatar_url"
+                                      value={avatar_url}
+                                      placeholder="Enter Avatar URL"
+                                      onChange={this.handleChange}
+                                    /><br/>
+                                    <input type='submit' className='submit-button' value='submit' />
+                                </form>
+                            </div>
+                        </Popup>
+                        
+                    </nav>
                 </div>
                 <div className='garments-container'>
                     {garmentComponents}

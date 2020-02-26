@@ -12,11 +12,6 @@ CREATE TABLE users (
     isPublic BOOLEAN
 );
 
-CREATE TABLE QR (
-    id SERIAL PRIMARY KEY,
-    img_url VARCHAR NOT NULL
-);
-
 CREATE TABLE garments (
     id SERIAL PRIMARY KEY, 
     user_id INT REFERENCES users (id),
@@ -24,7 +19,6 @@ CREATE TABLE garments (
     category VARCHAR NOT NULL,
     caption VARCHAR NOT NULL,
     img_url VARCHAR NOT NULL,
-    QR_id INT REFERENCES QR(id),
     prime_location VARCHAR NOT NULL
 );
 
@@ -38,6 +32,16 @@ CREATE TABLE history (
     img_url VARCHAR NOT NULL,
     isPublic BOOLEAN
 );
+
+
+-- INSERT INTO garments (user_id, garment_name, category, caption, img_url, prime_location)
+--     VALUES (1, 'Lebron Shirt', 'shirt', 'I bought this shirt from an online thrift shop', 'http://localhost:3100/public/images_url/lebron_shirt.jpeg');
+
+-- INSERT INTO users(username, email, password, avatar_url, isPublic) 
+--         VALUES('johnnyBravo', 'jbravo@cnetwork.com', '0123', 'http://localhost:3100/public/avatar_url/johnnyBravo.jpeg', 'true'),
+--               ('bananaoutfit', 'bananaoutfit@random.com', '1234', 'http://localhost:3100/public/avatar_url/bananaoutfit.jpeg', 'true'),
+--               ('simbawindsor', 'simbawindsor@random.com', '2345', 'http://localhost:3100/public/avatar_url/simbawindsor.jpeg', 'true'),
+--               ('avengergating', 'avengergating@random.com', '3456', 'http:localhost:3100/public/avatar_url/avengergating.jpeg', 'true');
 
 
 INSERT INTO users(username, email, password, avatar_url, isPublic) 
