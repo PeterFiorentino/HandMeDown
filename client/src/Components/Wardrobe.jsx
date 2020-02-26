@@ -23,12 +23,12 @@ class Wardrobe extends Component {
 
     getUserGarments = async () => {
         let { user } = this.props
-        let URL = `/garments/wardrobe/${user.id}`
+        let URL = `https://handmedown.herokuapp.com/garments/wardrobe/${user.id}`
         try {
             let results = await axios.get(URL)
             console.log(results.data.payload)
             this.setState({
-                garments: results.data.payload
+                garments: results.data.payload.user
             })
         } catch (err) {
             console.log(err)
@@ -46,7 +46,7 @@ class Wardrobe extends Component {
         e.preventDefault()
         let { user } = this.props
         let { garment_name, caption, category, img_url, prime_location } = this.state
-        let URL = `/garments/user/${user.id}`
+        let URL = `https://handmedown.herokuapp.com/garments/users/${user.id}`
         let data = {
             garment_name: garment_name,
             category: category,

@@ -24,7 +24,7 @@ class AuthContainer extends Component {
         // make network request to /auth/signup to register user
         console.log('Signing up user ...')
         try {
-            await axios.post('http://handmedown.herokuapp.com/auth/signup', this.state)
+            await axios.post('https://handmedown.herokuapp.com/auth/signup', this.state)
             this.loginUser()
         } catch (err) {
             console.log(err)
@@ -34,7 +34,7 @@ class AuthContainer extends Component {
     loginUser = async  () => {
         // make network request to /auth/signup to register user
         try {
-            const { data } = await axios.post('http://handmedown.herokuapp.com/auth/login', this.state )
+            const { data } = await axios.post('https://handmedown.herokuapp.com/auth/login', this.state )
 
             const user = data.payload
             this.props.setUser(user)
