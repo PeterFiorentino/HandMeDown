@@ -15,7 +15,7 @@ const getHistoryByGarmentId = async (garmentId) => {
       FROM history
       WHERE garment_id = $1;
     `;
-    return await db.any(getQuery, garmentId);
+    return await db.one(getQuery, garmentId);
   } catch(err) {
     throw(err);
   }
@@ -28,7 +28,7 @@ const getAllHistoriesByUserId = async (userId) => {
       FROM history
       WHERE user_id = $1;
     `;
-    return await db.any(getQuery, userId);
+    return await db.one(getQuery, userId);
   } catch(err) {
     throw(err);
   }

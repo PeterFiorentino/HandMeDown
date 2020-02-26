@@ -1,3 +1,4 @@
+require('dotenv').config()
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
@@ -5,6 +6,7 @@ var logger = require('morgan');
 const cors = require('cors');
 const session = require('express-session');
 const passport = require('./auth/passport');
+
 
 
 const indexRouter = require('./routes/index');
