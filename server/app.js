@@ -11,7 +11,6 @@ const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const garmentsRouter = require('./routes/garments');
 const authRouter = require('./routes/auth');
-const garmentsRouter = require('./routes/garments');
 const historiesRouter = require('./routes/histories');
 
 
