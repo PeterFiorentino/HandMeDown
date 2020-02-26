@@ -1,5 +1,5 @@
-const pgp = require('pg-promise')();
-const connectionString = "postgres://localhost:5432/handmedown"
-const db = pgp(connectionString);
+var pgp = require("pg-promise")();
+var connectionString = process.env.DATABASE_URL;
+var db = pgp(connectionString);
 
 module.exports = db
