@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './Navbar.css'
 
 const NavBar = ({ logoutUser, isUserLoggedIn, user }) => {
     if (isUserLoggedIn) {
