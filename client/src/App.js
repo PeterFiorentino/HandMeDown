@@ -86,7 +86,7 @@ class App extends React.Component {
           <PrivateRoute path='/user/wardrobe' render={this.renderWardrobe} isUserLoggedIn={this.state.isUserLoggedIn} />
           <PrivateRoute path='/user/wardrobe/:id' render={this.renderGarment} isUserLoggedIn={this.state.isUserLoggedIn} />
 
-          <Route path='http://handmedown.herokuapp.com/login' render={this.renderAuthContainer} />
+          <Route path='/login' render={this.renderAuthContainer} />
           <Route path='/signup' render={this.renderAuthContainer} />
           <Route path='/about' component={About} />
           <Route path='/' component={Home} />

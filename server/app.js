@@ -23,7 +23,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false}));
 app.use(cookieParser())
-app.use(express.static(path.join(__dirname, "../client/build")));
+app.use(express.static(path.join(__dirname, "/../client/build")));
 app.use(cors())
 app.use(express.json());
 // app.use(express.urlencoded({ extended: true }));
@@ -42,12 +42,12 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // app.use('/', indexRouter);
-app.use('/auth', authRouter);
-app.use('/users', usersRouter);
-app.use('/garments', garmentsRouter);
-app.use('/histories', historiesRouter);
-app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname + "../client/build/index.html"));
+app.use('/api/auth', authRouter);
+app.use('/api/users', usersRouter);
+app.use('/api/garments', garmentsRouter);
+app.use('/api/histories', historiesRouter);
+app.use("*", (req, res) => {
+    res.sendFile(path.join(__dirname + "/../client/build/index.html"));
   });
 
 module.exports = app;
