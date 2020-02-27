@@ -23,16 +23,14 @@ app.use(logger('dev'));
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false}));
 app.use(cookieParser())
-app.use(express.static(path.join(__dirname, "client/build")));
+app.use(express.static(path.join(__dirname, "../client/build")));
 app.use(cors())
 app.use(express.json());
 // app.use(express.urlencoded({ extended: true }));
 // app.use(express.static(path.join(__dirname, 'public')));
 app.use(cookieParser("NOT_A_GOOD_SECRET"));
 
-app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname + "/client/build/index.html"));
-  });
+
 
 app.use(session({
     secret: "NOT_A_GOOD_SECRET",
@@ -43,10 +41,13 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use('/', indexRouter);
+// app.use('/', indexRouter);
 app.use('/auth', authRouter);
 app.use('/users', usersRouter);
 app.use('/garments', garmentsRouter);
 app.use('/histories', historiesRouter);
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname + "../client/build/index.html"));
+  });
 
 module.exports = app;
