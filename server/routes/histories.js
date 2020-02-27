@@ -42,7 +42,7 @@ const {
 
 /* ROUTE HANDLES */
 //    getHistoryByGarment: get entire history of a garment.
-router.get("/api/garment/:garment_id", async (req, res, next) => {
+router.get("/garment/:garment_id", async (req, res, next) => {
     try {
         const garmentId = req.params.garment_id
         const allHistoryByGarment = await getHistoryByGarmentId(garmentId);
@@ -62,7 +62,7 @@ router.get("/api/garment/:garment_id", async (req, res, next) => {
 });
 
 //    allHistoryByUser: get all of a single user's history.
-router.get("/api/user/:user_id", async (req, res, next) => {
+router.get("/user/:user_id", async (req, res, next) => {
     try {
         const userId = req.params.user_id
         const allHistoryByUser = await getAllHistoriesByUserId(userId);
@@ -83,7 +83,7 @@ router.get("/api/user/:user_id", async (req, res, next) => {
 
 
 //    createHistory: create a single historic event for a garment
-router.post("/api/", async (req, res, next) => {
+router.post("/", async (req, res, next) => {
     try {
         const userId = req.body.user_id;
         const garmentId = req.body.garment_id;

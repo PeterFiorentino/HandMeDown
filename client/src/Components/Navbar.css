@@ -1,0 +1,13 @@
+nav {
+    display: flex;
+   border: 2px solid #434c3d;
+   background-color:#d88e4b;
+   justify-content:space-around;
+   margin: 5px;
+   padding: 20px;
+}
+
+Link {
+    text-decoration: none;
+}
+

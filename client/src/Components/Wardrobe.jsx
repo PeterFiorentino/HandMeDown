@@ -93,9 +93,12 @@ class Wardrobe extends Component {
         return (
             <div className='main'>
                 <div className='header'>
-                    <div className='user'>
-                        <img src={user.avatar_url} />
-                        <h3 className='username'>{user.username}'s Wardrobe</h3>
+                    <h3></h3>
+                    <div className='logo'>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Yankees_logo.svg"/>
+                    </div>
+                    <div>
+
                     </div>
                     
                     
@@ -211,7 +214,7 @@ class Wardrobe extends Component {
                     </nav>
                 </div>
                 <div className='garments-container'>
-                    {garmentComponents}
+                    {/* {garmentComponents} */}
                 </div>
             </div>
         )

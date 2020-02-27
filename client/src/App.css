@@ -21,10 +21,43 @@ a:visited {
   padding-top: 1em;
   padding-bottom: 1em;
   padding-left: 1em;
+
+  background-image: url("https://media.giphy.com/media/Vdn1lhtGoWMRW/giphy.gif");
+  background-color: #434c3d;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.7;
+   visibility: hidden;
+  /* opacity: 0; */
+  transition: visibility 0s 2s, opacity 2s linear;
 }
+
 
 .App {
   text-align: center;
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 2s linear;
+ 
+}
+
+.form-container {
+  background-color: #9db0a0;
+  border-radius: 8px;
+  color: #fff;
+  max-width: 350px;
+  margin: 20px 0 70px;
+  min-height: 400px;
+  padding: 30px;
+
+}
+
+.main {
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;  
 }
 
 img {
@@ -46,11 +79,16 @@ input {
 .submit-button {
   margin-top: 1em;
   height: 2em;
-  width: 17em; 
+  width: 8em; 
   font-size: 15px;
   color: white;
+<<<<<<< HEAD
   background-color: #434C3D;
   border-radius: 3px;
+=======
+  background-color:rgb(93, 106, 223);
+  border-radius: 10px;
+>>>>>>> 6cc0b83eaee0cd93f47813b643dd1a3407357ed4
 }
 .popup-content {
   background-color: blue;
@@ -81,6 +119,7 @@ h4:hover {
 h3 {
   padding-left: 0.5%
 }
+<<<<<<< HEAD
 .garment-form, .user-form {
   /* text-align: left; */
   /* padding: 10%; */
@@ -122,3 +161,5 @@ h3 {
   border: 1px solid #cfcece;
 }
 
+=======
+>>>>>>> 6cc0b83eaee0cd93f47813b643dd1a3407357ed4
