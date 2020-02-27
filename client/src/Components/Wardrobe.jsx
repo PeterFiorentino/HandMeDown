@@ -54,7 +54,7 @@ class Wardrobe extends Component {
                 <div className='header'>
                     <h3></h3>
                     <div className='logo'>
-
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Yankees_logo.svg"/>
                     </div>
                     <div>
 
