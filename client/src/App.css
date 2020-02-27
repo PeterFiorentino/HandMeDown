@@ -82,13 +82,8 @@ input {
   width: 8em; 
   font-size: 15px;
   color: white;
-<<<<<<< HEAD
-  background-color: #434C3D;
-  border-radius: 3px;
-=======
   background-color:rgb(93, 106, 223);
   border-radius: 10px;
->>>>>>> 6cc0b83eaee0cd93f47813b643dd1a3407357ed4
 }
 .popup-content {
   background-color: blue;
@@ -119,7 +114,6 @@ h4:hover {
 h3 {
   padding-left: 0.5%
 }
-<<<<<<< HEAD
 .garment-form, .user-form {
   /* text-align: left; */
   /* padding: 10%; */
@@ -161,5 +155,3 @@ h3 {
   border: 1px solid #cfcece;
 }
 
-=======
->>>>>>> 6cc0b83eaee0cd93f47813b643dd1a3407357ed4
