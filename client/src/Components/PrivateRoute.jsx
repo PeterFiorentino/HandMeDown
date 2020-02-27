@@ -1,5 +1,6 @@
 import React from 'react'
 import { Route, Redirect } from 'react-router-dom'
+
 const PrivateRoute = (props) => {
     const isUserLoggedIn = props.isUserLoggedIn;
     const Component = props.component

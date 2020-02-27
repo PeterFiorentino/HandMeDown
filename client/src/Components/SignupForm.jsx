@@ -1,5 +1,5 @@
 import React from 'react';
-import './SignupForm.css'
+
 
 const SignupForm = ({
   username,
@@ -28,6 +28,7 @@ const SignupForm = ({
           placeholder="username"
           onChange={handleChange}
         /><br/>
+        <i class="fas fa-envelope"></i>{" "}
         <input
           className='signup-input'
           type="text"
