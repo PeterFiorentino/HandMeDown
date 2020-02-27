@@ -10,7 +10,7 @@ import axios from 'axios'
     }
 
     componentDidMount = () => {
-
+        this.getGarment()
     }
     handleChange = (e) => {
         e.preventDefault()
@@ -21,7 +21,7 @@ import axios from 'axios'
 
     getGarment = async () => {
         const { routeprops: { match:{ params } } } = this.props;
-        const URL = ``
+        const URL = `https://handmedown.herokuapp.com/garments/${params.id}`
         try {
             let results = await axios.get(URL)
             console.log(results.data.payload)
@@ -35,7 +35,7 @@ import axios from 'axios'
 
     getHistory = async () => {
         const { routeprops: { match:{ params } } } = this.props;
-        const URL = ``
+        const URL = `https://handmedown.herokuapp.com/histories/api/garment/${params.id}`
         try {
             let results = await axios.get(URL)
             console.log(results.data.payload)
@@ -49,8 +49,14 @@ import axios from 'axios'
 
     render() {
         const { show, historyPosts } = this.state
+        let historyComponents = []
+        historyPosts.forEach(post => {
+            historyComponents.push(
+                <div>
 
-        historyPosts.forEach(post => {})
+                </div>
+            )
+        })
         return (
             <div className='main'>
                 <div className='history-container'>

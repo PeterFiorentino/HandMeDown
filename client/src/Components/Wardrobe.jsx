@@ -23,7 +23,7 @@ class Wardrobe extends Component {
 
     getUserGarments = async () => {
         let { user } = this.props
-        let URL = `https://handmedown.herokuapp.com/garments/wardrobe/${user.id}`
+        let URL = `/api/garments/wardrobe/${user.id}`
         try {
             let results = await axios.get(URL)
             console.log(results.data.payload)
@@ -46,7 +46,7 @@ class Wardrobe extends Component {
         e.preventDefault()
         let { user } = this.props
         let { garment_name, caption, category, img_url, prime_location } = this.state
-        let URL = `https://handmedown.herokuapp.com/garments/users/${user.id}`
+        let URL = `/api/garments/users/${user.id}`
         let data = {
             garment_name: garment_name,
             category: category,
@@ -80,9 +80,9 @@ class Wardrobe extends Component {
         const garmentComponents = [];
         garments.forEach(garment => {
             garmentComponents.push(
-                <Link>
+                <Link to={`/user/wardrobe/garment/${garment.id}`}>
                     <div className='garment'>
-                        <img src={garment.img_url} height='200'/>
+                        <img src={garment.img_url}/>
                         <p>{garment.garment_name}</p>
                         <p>{garment.category}</p>
                         <p>{garment.caption}</p>
@@ -128,7 +128,7 @@ class Wardrobe extends Component {
                                     <textarea 
                                         name="caption"
                                         value={caption} 
-                                        // cols="50"
+                                        cols="42"
                                         onChange={this.handleChange} 
                                         placeholder="Caption"
                                     /><br/>
@@ -150,7 +150,7 @@ class Wardrobe extends Component {
                                         placeholder="Location"
                                         onChange={this.handleChange}
                                     /><br/>
-                                    <input type='submit' className='submit-button' value='submit' />
+                                    <input type='submit' className='submit-button' value='Add Garment' />
                                 </form>
                             </div>
                         </Popup>
@@ -172,6 +172,7 @@ class Wardrobe extends Component {
                                       onChange={this.handleChange}
                                     /><br/>
                                     <b>Email</b><br/>
+                                    <i class="fas fa-envelope"></i>{" "}
                                     <input
                                       className='signup-input'
                                       type="text"
@@ -180,8 +181,9 @@ class Wardrobe extends Component {
                                       placeholder="email"
                                       onChange={this.handleChange}
                                     /><br/>
-                                    <i class="fas fa-lock"></i>{"  "}
+                                    
                                     <b>Password</b><br/>
+                                    <i class="fas fa-lock"></i>{"  "}
                                     <input
                                       className='signup-input'
                                       type="password"
@@ -190,8 +192,9 @@ class Wardrobe extends Component {
                                       placeholder="••••••••"
                                       onChange={this.handleChange}
                                     /><br/>
-                                    <i class="fas fa-image"></i>{"  "}
+                                    
                                     <b>Avatar</b><br/>
+                                    <i class="fas fa-image"></i>{"  "}
                                     <input
                                       className='signup-input'
                                       type="text"

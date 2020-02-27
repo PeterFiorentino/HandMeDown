@@ -27,7 +27,7 @@ router.get('/:id', async (req, res)  => {
       res.json({
         message: "Success",
         payload: {
-          user: singleGarment
+          garment: singleGarment
         }, 
         error: null
       })

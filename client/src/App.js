@@ -83,8 +83,9 @@ class App extends React.Component {
         />
 
         <Switch>
+          <PrivateRoute path='/user/wardrobe/garment/:id' render={this.renderGarment} isUserLoggedIn={this.state.isUserLoggedIn} />
           <PrivateRoute path='/user/wardrobe' render={this.renderWardrobe} isUserLoggedIn={this.state.isUserLoggedIn} />
-          <PrivateRoute path='/user/wardrobe/:id' render={this.renderGarment} isUserLoggedIn={this.state.isUserLoggedIn} />
+          
 
           <Route path='/login' render={this.renderAuthContainer} />
           <Route path='/signup' render={this.renderAuthContainer} />
