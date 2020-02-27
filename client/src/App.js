@@ -34,7 +34,7 @@ class App extends React.Component {
 
   checkUserLoggedIn = async () => {
     try {
-      const { data } = axios.get("https://handmedown.herokuapp.com/auth/isUserLoggedIn");
+      const { data } = axios.get("/api/auth/isUserLoggedIn");
       this.props.setUser(data.payload);
     } catch (err) {
       if (err.message.includes(401)) {
@@ -62,7 +62,7 @@ class App extends React.Component {
   logoutUser = async () => {
     console.log('logging out user');
     try {
-      await axios.get('https://handmedown.herokuapp.com/auth/logout');
+      await axios.get('/api/auth/logout');
       this.setState({
         user: null,
         isUserLoggedIn: false
