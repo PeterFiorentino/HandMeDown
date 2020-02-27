@@ -1,0 +1,11 @@
+.main {
+   position: relative;
+  animation: mymove 3s;
+  animation-delay: 2s;
+  animation-fill-mode: both;
+}
+
+@keyframes mymove {
+  from {top: 0px; background-color: #434c3d;}
+  to {top: 200px; background-image: url("https://media.giphy.com/media/Vdn1lhtGoWMRW/giphy.gif");}
+}

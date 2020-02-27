@@ -4,21 +4,20 @@ body {
   background-color: #434c3d;
   background-repeat: no-repeat;
   background-size: cover;
-  opacity: 0.6;
+  opacity: 0.7;
    visibility: hidden;
   /* opacity: 0; */
   transition: visibility 0s 2s, opacity 2s linear;
 }
+
 
 .App {
   text-align: center;
   visibility: visible;
   opacity: 1;
   transition: opacity 2s linear;
+ 
 }
-
-
-
 
 .form-container {
   background-color: #9db0a0;
