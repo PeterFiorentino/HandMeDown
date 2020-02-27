@@ -26,8 +26,8 @@ app.use(cookieParser())
 app.use(express.static(path.join(__dirname, "../client/build")));
 app.use(cors())
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'public')));
+// app.use(express.urlencoded({ extended: true }));
+// app.use(express.static(path.join(__dirname, 'public')));
 app.use(cookieParser("NOT_A_GOOD_SECRET"));
 
 app.get("*", (req, res) => {
