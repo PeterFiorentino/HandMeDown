@@ -19,20 +19,20 @@ const historiesRouter = require('./routes/histories');
 
 var app = express();
 
-// app.use(logger('dev'));
-// app.use(bodyParser.json())
-// app.use(bodyParser.urlencoded({ extended: false}));
-// app.use(cookieParser())
-// app.use(express.static(path.join(__dirname, "client/public")));
+app.use(logger('dev'));
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: false}));
+app.use(cookieParser())
+app.use(express.static(path.join(__dirname, "client/src")));
 app.use(cors())
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cookieParser("NOT_A_GOOD_SECRET"));
 
-// app.get("*", (req, res) => {
-//     res.sendFile(path.join(__dirname + "../client/public/index.html"));
-//   });
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname + "../client/src/App.js"));
+  });
 
 app.use(session({
     secret: "NOT_A_GOOD_SECRET",
