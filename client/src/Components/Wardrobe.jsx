@@ -78,18 +78,18 @@ class Wardrobe extends Component {
         } = this.state;
 
         const garmentComponents = [];
-        garments.forEach(garment => {
-            garmentComponents.push(
-                <Link to={`/user/wardrobe/garment/${garment.id}`}>
-                    <div className='garment'>
-                        <img src={garment.img_url}/>
-                        <p>{garment.garment_name}</p>
-                        <p>{garment.category}</p>
-                        <p>{garment.caption}</p>
-                    </div>
-                </Link>
-            )
-        });
+        // garments.forEach(garment => {
+        //     garmentComponents.push(
+        //         <Link to={`/user/wardrobe/garment/${garment.id}`}>
+        //             <div className='garment'>
+        //                 <img src={garment.img_url}/>
+        //                 <p>{garment.garment_name}</p>
+        //                 <p>{garment.category}</p>
+        //                 <p>{garment.caption}</p>
+        //             </div>
+        //         </Link>
+        //     )
+        // });
         return (
             <div className='main'>
                 <div className='header'>
