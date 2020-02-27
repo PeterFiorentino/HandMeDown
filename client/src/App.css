@@ -155,3 +155,9 @@ h3 {
   border: 1px solid #cfcece;
 }
 
+.about {
+  background-color: #f7f8f0;
+  border: 2px solid #E94842;
+  width: 95%;
+  margin: 20px;
+}
