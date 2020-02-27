@@ -39,16 +39,16 @@ class Wardrobe extends Component {
         const { user } = this.props;
         const { garments } = this.state;
         const garmentComponents = [];
-        garments.forEach(garment => {
-            garmentComponents.push(
-                <Link>
-                    <div className='garment'>
+        // garments.forEach(garment => {
+        //     garmentComponents.push(
+        //         <Link>
+        //             <div className='garment'>
 
-                    </div>
-                </Link>
+        //             </div>
+        //         </Link>
                 
-            )
-        });
+        //     )
+        // });
         return (
             <div className='main'>
                 <div className='header'>
@@ -61,7 +61,7 @@ class Wardrobe extends Component {
                     </div>
                 </div>
                 <div className='garments-container'>
-                    {garmentComponents}
+                    {/* {garmentComponents} */}
                 </div>
             </div>
         )
