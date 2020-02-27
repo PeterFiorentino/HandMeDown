@@ -1,15 +1,42 @@
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 
+  background-image: url("https://media.giphy.com/media/Vdn1lhtGoWMRW/giphy.gif");
   background-color: #434c3d;
-  background-image: url("https://www.fsusd.org/cms/lib/CA01001943/Centricity/Domain/4/Clothing.png");
+  background-repeat: no-repeat;
+  background-size: cover;
   opacity: 0.6;
+   visibility: hidden;
+  /* opacity: 0; */
+  transition: visibility 0s 2s, opacity 2s linear;
 }
 
 .App {
   text-align: center;
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 2s linear;
+}
+
+
+
+
+.form-container {
+  background-color: #9db0a0;
+  border-radius: 8px;
+  color: #fff;
+  max-width: 350px;
+  margin: 20px 0 70px;
+  min-height: 400px;
+  padding: 30px;
+
+}
+
+.main {
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;  
 }
 
 img {
@@ -32,11 +59,11 @@ img {
 .submit-button {
   margin-top: 1em;
   height: 2em;
-  width: 17em; 
+  width: 8em; 
   font-size: 15px;
   color: white;
   background-color:rgb(93, 106, 223);
-  border-radius: 3px;
+  border-radius: 10px;
 }
 
 .garment-nav {

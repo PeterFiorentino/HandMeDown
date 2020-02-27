@@ -1,10 +1,12 @@
 nav {
     display: flex;
-    /* z-index: 0; */
    border: 2px solid #434c3d;
    background-color:#d88e4b;
    justify-content:space-around;
-   align-items: center;
    margin: 5px;
    padding: 20px;
+}
+
+Link {
+    text-decoration: none;
 }

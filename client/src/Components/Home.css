@@ -1,9 +1,0 @@
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  background-color: #434c3d;
-  background-image: url("https://www.fsusd.org/cms/lib/CA01001943/Centricity/Domain/4/Clothing.png");
-  opacity: 0.6;
-}
