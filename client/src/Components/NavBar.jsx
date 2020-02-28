@@ -16,8 +16,8 @@ const NavBar = ({ logoutUser, isUserLoggedIn, user }) => {
     return (
         <nav className='main-nav'>
             <Link to='/'>Home</Link>{" "}
-            <Link to='/login'>Log-In</Link>{" "}
-            <Link to='/signup'>Sign-Up</Link>{" "}
+            {/* <Link to='/login'>Log-In</Link>{" "}
+            <Link to='/signup'>Sign-Up</Link>{" "} */}
             <Link to='/about'>About</Link>
         </nav>
     )

@@ -1,5 +1,24 @@
+.App {
+  text-align: center;
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 2s linear;
+}
+
 body {
   background-color: #9DB0A0;
+}
+.main-logo {
+  width: 60vw;
+  padding-bottom: 2em;
+}
+
+.main {
+  padding-top:1em;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;  
 }
 
 a {
@@ -14,52 +33,41 @@ a:link {
 a:visited {
   text-decoration: none;
 }
+/* nav {
+  display: flex;
+  background-color:#d88e4b;
+  justify-content:space-around;
+  padding: 20px;
+} */
 
 .main-nav {
   background-color: #434C3D;
   color: white;
-  padding-top: 1em;
-  padding-bottom: 1em;
-  padding-left: 1em;
-
-  background-image: url("https://media.giphy.com/media/Vdn1lhtGoWMRW/giphy.gif");
-  background-color: #434c3d;
-  background-repeat: no-repeat;
-  background-size: cover;
-  opacity: 0.7;
-   visibility: hidden;
-  /* opacity: 0; */
-  transition: visibility 0s 2s, opacity 2s linear;
-}
-
-
-.App {
-  text-align: center;
-  visibility: visible;
-  opacity: 1;
-  transition: opacity 2s linear;
- 
+  padding: 20px;
 }
 
 .form-container {
-  background-color: #9db0a0;
+  background-color: #434C3D;
   border-radius: 8px;
   color: #fff;
   max-width: 350px;
-  margin: 20px 0 70px;
-  min-height: 400px;
+  margin: 20px;
   padding: 30px;
-
 }
 
-.main {
-   display: flex;
-   flex-direction: row;
-   flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;  
-}
 
+i {
+  color: #D88E4B
+}
+.user {
+  margin: 2em;
+}
+.avatar {
+  margin-right: 2em;
+  border-radius: 150px;
+  height: 15%;
+  width: 15%;
+}
 img {
   height: 15%;
   width: 15%;
@@ -71,58 +79,33 @@ img {
   height: 2em;
 }
 
-input {
-  background-color: #434C3D;
-  color: white;
-}
+/* .login-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fffcf5;
+  border: medium none;
+  border-radius: 4px;
+  color: #66615b;
+  font-size: 16px;
+  transition: background-color 0.3s ease 0s;
+  padding: 7px 18px;
+  height: 40px;
+  box-shadow: none;
+} */
 
-.submit-button {
-  margin-top: 1em;
-  height: 2em;
-  width: 8em; 
-  font-size: 15px;
-  color: white;
-  background-color:rgb(93, 106, 223);
-  border-radius: 10px;
-}
-.popup-content {
-  background-color: blue;
+.garment-form, .user-form, .history-form{
+  text-align: center;
+  /* padding: 10%;
+  margin: 2em; */
+  padding: 2em;
+  background-color: #9DB0A0;
+  border: 10px solid #D88E4B
 }
 
 .garment-nav {
   display:flex;
 }
-
-h4 {
-  background-color: g ray;
-  margin: 0.5%;
-  padding: 0.5em;
-}
-
-h4:hover {
-  background-color: rgb(83, 83, 83);
-}
-
-.user {
-  display: flex;
-}
-
-.username {
-  align-items: center;
-}
-
-h3 {
-  padding-left: 0.5%
-}
-.garment-form, .user-form {
-  /* text-align: left; */
-  /* padding: 10%; */
-  margin: 2em;
-  padding: 2em;
-  background-color: #9DB0A0;
-}
-
-
 
 .garment-form > .header {
   width: 100%;
@@ -131,16 +114,19 @@ h3 {
   text-align: center;
   padding: 5px;
 }
+
 .garment-form > .content {
   width: 100%;
   padding: 10px 5px;
 }
+
 .garment-form > .actions {
   width: 100%;
   padding: 10px 5px;
   margin: auto;
   text-align: center;
 }
+
 .garment-form > .close {
   cursor: pointer;
   position: absolute;
@@ -154,4 +140,105 @@ h3 {
   border-radius: 18px;
   border: 1px solid #cfcece;
 }
+
+.submit-button {
+  background-color: #D88E4B;
+  margin-top: 1em;
+  height: 2em;
+  width: 17em; 
+  font-size: 15px;
+  color: white;
+  border-radius: 5px;
+}
+h4 {
+  background-color: #D88E4B;
+  color: white;
+  margin: 0.5%;
+  padding: 0.5em;
+}
+
+h4:hover {
+  background-color: rgb(83, 83, 83);
+}
+
+.user {
+  display: flex;
+}
+
+h3 {
+  padding-left: 0.5%
+}
+
+.redirect-buttons {
+  display: flex;
+  text-align: center;
+}
+
+.garment {
+  display: flex;
+  border-radius: 10px;
+  /* border: 2px solid #D88E4B; */
+  background-color: #9DB0A0;
+}
+
+.garments-container {
+  border-radius: 10px;
+  margin: 2em;
+  display: flex;
+  background-color: #434C3D;
+}
+
+/* input {
+  background-color: #434C3D;
+  color: white;
+} */
+
+/* .about {
+  background-color: #f7f8f0;
+  border: 2px solid #E94842;
+  width: 95%;
+  margin: 20px;
+} */
+
+/* .main {
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;  
+} */
+
+
+/* .submit-button {
+  margin-top: 1em;
+  height: 2em;
+  width: 8em; 
+  font-size: 15px;
+  color: white;
+  background-color:rgb(93, 106, 223);
+  border-radius: 10px;
+} */
+
+/* .main {
+  position: relative;
+  animation: mymove 3s;
+  animation-delay: 2s;
+  animation-fill-mode: both;
+}
+
+@keyframes mymove {
+  from {top: 0px; background-color: #434c3d;}
+  to {top: 200px; background-image: url("https://media.giphy.com/media/Vdn1lhtGoWMRW/giphy.gif");}
+} */
+
+
+
+
+
+
+
+
+
+
+
 
