@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios';
-import { Switch, Route, Redirect } from 'react-router-dom'
+import { Switch, Route, Redirect, Link } from 'react-router-dom'
 
 import LoginForm from '../Components/LoginForm';
 import SignupForm from '../Components/SignupForm.jsx';
@@ -82,6 +82,9 @@ class AuthContainer extends Component {
                         </Switch> 
                     )
                 }
+                <Link to='/Home'>
+                    <button className='submit-button'>Back to Home</button>
+                </Link>
             </div>
         )
     }

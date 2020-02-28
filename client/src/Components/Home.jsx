@@ -1,31 +1,26 @@
 import React, { Component } from 'react'
-import { Redirect } from 'react-router-dom';
-
+import { Redirect, Link } from 'react-router-dom';
+import Logo from '../Assets/Hand-Me-Down-Logo-Color.svg'
 
 class Home extends Component {
-    state = {
-        loginClicked: false
-    }
-    redirectToLogin = () => {
-        this.setState({loginClicked:true})
-    }
 
     render() {
-        const { loginClicked } = this.state
         return (
             
             <div className='main'>
-                {
-                    loginClicked 
-                    ? <Redirect to='/login'/> 
-                    : (
-                        <div className='main'>
-                            <h1> Welcome to HandMeDown! </h1>
-                            
-                            <button className='submit-button' onClick={this.redirectToLogin}> Log In </button>
+                <div className='main'>
+                    <img src={Logo} className='main-logo'/>
+                        <h1> Welcome to HandMeDown! Add stories to your clothing! </h1>
+                        <div className='redirect-buttons'>
+                            <Link to='/login'>
+                                <button className='submit-button'> Log In </button>
+                            </Link> 
+                            <Link to='/signup'>
+                                <button className='submit-button'> Sign Up </button>
+                            </Link>
                         </div>
-                    )
-                }
+                         
+                </div>   
             </div>
         )
     }

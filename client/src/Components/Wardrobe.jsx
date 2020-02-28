@@ -23,12 +23,12 @@ class Wardrobe extends Component {
 
     getUserGarments = async () => {
         let { user } = this.props
-        let URL = `/api/garments/wardrobe/${user.id}`
+        let URL = `/api/garments/garment/${user.id}`
         try {
             let results = await axios.get(URL)
             console.log(results.data.payload)
             this.setState({
-                garments: results.data.payload.user
+                garments: results.data.payload
             })
         } catch (err) {
             console.log(err)
@@ -46,7 +46,7 @@ class Wardrobe extends Component {
         e.preventDefault()
         let { user } = this.props
         let { garment_name, caption, category, img_url, prime_location } = this.state
-        let URL = `/api/garments/users/${user.id}`
+        let URL = `/api/garments/user/${user.id}`
         let data = {
             garment_name: garment_name,
             category: category,
@@ -83,22 +83,23 @@ class Wardrobe extends Component {
                 <Link to={`/user/wardrobe/garment/${garment.id}`}>
                     <div className='garment'>
                         <img src={garment.img_url}/>
-                        <p>{garment.garment_name}</p>
-                        <p>{garment.category}</p>
-                        <p>{garment.caption}</p>
+                        <div>
+                            <h3>{garment.garment_name}</h3>
+                            {garment.prime_location}
+                        </div>
+                        
+                        {/* <p>{garment.category}</p>
+                        <p>{garment.caption}</p> */}
                     </div>
                 </Link>
             )
         });
         return (
-            <div className='main'>
+            <div className='wardrobe-main'>
                 <div className='header'>
-                    <h3></h3>
-                    <div className='logo'>
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Yankees_logo.svg"/>
-                    </div>
-                    <div>
-
+                    <div className='user'>
+                        <img className='avatar' src={user.avatar_url} />
+                        <h1>{user.username}'s Wardrobe</h1>
                     </div>
                     
                     
@@ -214,7 +215,7 @@ class Wardrobe extends Component {
                     </nav>
                 </div>
                 <div className='garments-container'>
-                    {/* {garmentComponents} */}
+                    {garmentComponents}
                 </div>
             </div>
         )

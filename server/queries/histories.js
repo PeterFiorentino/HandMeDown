@@ -9,56 +9,70 @@ const db = require('../routes/db');
 
 
 const getHistoryByGarmentId = async (garmentId) => {
-  try {
-    const getQuery = `
-      SELECT *
-      FROM history
-      WHERE garment_id = $1;
-    `;
-    return await db.one(getQuery, garmentId);
-  } catch(err) {
-    throw(err);
-  }
+  // try {
+  //   const getQuery = `
+  //     SELECT *
+  //     FROM history
+  //     WHERE garment_id = $1;
+  //   `;
+  //   let history = await db.any(getQuery, garmentId);
+  // } catch(err) {
+  //   throw(err);
+  // }
+  const getQuery = `SELECT * FROM history WHERE garment_id = $1;`;
+  let history = await db.any(getQuery, [garmentId]);
+
+  return history
 }
 
 const getAllHistoriesByUserId = async (userId) => {
-  try {
-    const getQuery = `
-      SELECT *
-      FROM history
-      WHERE user_id = $1;
-    `;
-    return await db.one(getQuery, userId);
-  } catch(err) {
-    throw(err);
-  }
+  // try {
+  //   const getQuery = `
+  //     SELECT *
+  //     FROM history
+  //     WHERE user_id = $1;
+  //   `;
+  //   return await db.one(getQuery, userId);
+  // } catch(err) {
+  //   throw(err);
+  // }
+  const getQuery = `SELECT * FROM history WHERE user_id = $1;`;
+  let history =  await db.any(getQuery, [userId]);
+  return history
 }
 
 const createHistory = async (bodyObj) => {
-  try {
-    const postQuery = `
+  // try {
+  //   const postQuery = `
+  //     INSERT INTO history (
+  //         user_id,
+  //         garment_id,
+  //         location,
+  //         body,
+  //         img_url,
+  //         isPublic
+  //     ) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *;
+  //   `;
+    
+  // } catch(err) {
+  //   throw(err);
+  // }
+  const postQuery = `
       INSERT INTO history (
-          user_id
-        , garment_id
-        , location
-        , body
-        , img_url
-        , isPublic
-      ) VALUES (
-          $/userId/
-        , $/garmentId/
-        , $/location/
-        , $/body/
-        , $/imageUrl/
-        , $/isPublic/
-      ) RETURNING *;
+          user_id,
+          garment_id,
+          location,
+          body,
+          img_url,
+          isPublic
+      ) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *;
     `;
-    return await db.one(postQuery, bodyObj);
-  } catch(err) {
-    throw(err);
-  }
-}
 
+  let history = await db.one(postQuery, [bodyObj.userId, bodyObj.garmentId, bodyObj.location, bodyObj.body, bodyObj.image_url, bodyObj.isPublic]);
+
+  return history
+}
+// to do
 const rewriteHistory = async (bodyObj) => {
   try {
     const patchQuery = `

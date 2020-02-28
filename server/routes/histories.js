@@ -45,23 +45,24 @@ const {
 router.get("/garment/:garment_id", async (req, res, next) => {
     try {
         const garmentId = req.params.garment_id
-        const allHistoryByGarment = await getHistoryByGarmentId(garmentId);
+        const history = await getHistoryByGarmentId(garmentId);
+        console.log(history)
         res.json({
             status: "success",
             message: `all history of garment ${garmentId} retrieved`,
-            payload: allHistoryByGarment
+            payload: history
         });
     } catch (err) {
         res.json({
             status: "failure",
-            message: "Oops! All Errors!",
+            message: "Oops! All Errors!!",
             payload: null
         })
         throw err;
     }
 });
 
-//    allHistoryByUser: get all of a single user's history.
+// allHistoryByUser: get all of a single user's history.
 router.get("/user/:user_id", async (req, res, next) => {
     try {
         const userId = req.params.user_id
@@ -82,23 +83,22 @@ router.get("/user/:user_id", async (req, res, next) => {
 });
 
 
-//    createHistory: create a single historic event for a garment
-router.post("/", async (req, res, next) => {
+// createHistory: create a single historic event for a garment
+router.post("/new/:garment_id/:user_id", async (req, res, next) => {
     try {
-        const userId = req.body.user_id;
-        const garmentId = req.body.garment_id;
+        const userId = req.params.user_id;
+        const garmentId = req.params.garment_id;
         const location = req.body.location;
         const body = req.body.body;
-        const imageUrl = req.body.img_url;
+        const imageUrl = req.body.imageUrl;
         const isPublic = req.body.isPublic;
-
         const response = await createHistory({
-            userId,
-            garmentId,
-            location,
-            body,
-            imageUrl,
-            isPublic
+            userId: userId,
+            garmentId: garmentId,
+            location: location,
+            body: body,
+            image_url: imageUrl,
+            isPublic: isPublic
         });
         res.json({
             status: "success",
