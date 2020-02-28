@@ -76,9 +76,10 @@ class Wardrobe extends Component {
             password,
             email
         } = this.state;
-
+        console.log("garments", garments)
         const garmentComponents = [];
         garments.forEach(garment => {
+            console.log(garment)
             garmentComponents.push(
                 <Link to={`/user/wardrobe/garment/${garment.id}`}>
                     <div className='garment'>
