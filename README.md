@@ -1,7 +1,7 @@
 # HandMeDown
 
 # Problem Statement: 
-The term 'sustainability' can be very misleading to consumers because it is not as straight forward as one would think. The term has been greatly misrepresented in the fashion industry as telling instead of showing. Fashion labels think it only suffices to allude to the fact that they are using 'green' materials in their products while not changing the process of making the products. Our focuse is on over production by the companies and mass consumption by the public. 
+The term 'sustainability' can be very misleading to consumers because it is not as straight forward as one would think. The term has been greatly misrepresented in the fashion industry as telling instead of showing. Fashion labels think it only suffices to allude to the fact that they are using 'green' materials in their products while not changing the process of making the products. Our focus is on over production by the companies and mass consumption by the public. 
 
 
 # Solution:
