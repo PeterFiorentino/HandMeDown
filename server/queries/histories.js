@@ -42,21 +42,6 @@ const getAllHistoriesByUserId = async (userId) => {
 }
 
 const createHistory = async (bodyObj) => {
-  // try {
-  //   const postQuery = `
-  //     INSERT INTO history (
-  //         user_id,
-  //         garment_id,
-  //         location,
-  //         body,
-  //         img_url,
-  //         isPublic
-  //     ) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *;
-  //   `;
-    
-  // } catch(err) {
-  //   throw(err);
-  // }
   const postQuery = `
       INSERT INTO history (
           user_id,
@@ -65,13 +50,13 @@ const createHistory = async (bodyObj) => {
           body,
           img_url,
           isPublic
-      ) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *;
-    `;
+      ) VALUES ($1, $2, $3, $4, $5, $6);`;
 
-  let history = await db.one(postQuery, [bodyObj.userId, bodyObj.garmentId, bodyObj.location, bodyObj.body, bodyObj.image_url, bodyObj.isPublic]);
+  let history = await db.none(postQuery, [bodyObj.userId, bodyObj.garmentId, bodyObj.location, bodyObj.body, bodyObj.img_url, bodyObj.isPublic]);
 
   return history
 }
+
 // to do
 const rewriteHistory = async (bodyObj) => {
   try {
