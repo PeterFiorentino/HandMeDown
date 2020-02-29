@@ -8,7 +8,7 @@ import axios from 'axios'
         garment: {},
         location: '',
         body: '',
-        image_url: '',
+        img_url: '',
         isPublic: true,
         historyPosts: []
     }
@@ -26,12 +26,12 @@ import axios from 'axios'
 
     getGarment = async () => {
         const { routeprops: { match:{ params } } } = this.props;
-        const URL = `/api/garments/garment/${params.id}`
+        const URL = `/api/garments/${params.id}`
         try {
             let results = await axios.get(URL)
             console.log(results.data.payload)
             this.setState({
-                garment: results.data.payload[0]
+                garment: results.data.payload.garment
             })
         } catch (err) {
             console.log(err)
@@ -54,14 +54,14 @@ import axios from 'axios'
 
     handleHistorySubmit = async (e) => {
         e.preventDefault()
-        const { user, body, location, image_url, isPublic } = this.state
+        const { user, body, location, img_url, isPublic } = this.state
         const { routeprops: { match:{ params } } } = this.props;
         const URL = `/api/histories/new/${params.id}/${user.id}`;
 
         const data = {
             body: body,
             location: location,
-            imageUrl: image_url,
+            img_url: img_url,
             isPublic: isPublic
         }
 
@@ -84,21 +84,37 @@ import axios from 'axios'
         let historyComponents = []
         historyPosts.forEach(history => {
             historyComponents.push(
-                <div>
-                    <img src={history.img_url} height='250px' />
-                    <i>{history.location}</i><br/>
-                    <p>{history.body}</p>
+                <div className='history-post'>
+                    <img className='history-img' src={history.img_url} />
+                    <div className='history-content'>
+                        <p>{history.location}</p><br/>
+                        <p>{history.body}</p>
+                    </div>
+                    
                 </div>
             )
         })
 
         return (
             <div className='main'>
-                <div>
-                    <img src={garment.img_url} />
-                    <h3>{garment.garment_name}</h3>
-                    <p>{garment.caption}</p>
+                <div className='header'>
+                    <Popup
+                        trigger={<img src={garment.img_url}/>}
+                        modal
+                        position="right center"
+                    >
                     <img src={`http://api.qrserver.com/v1/create-qr-code/?data=https://handmedown.herokuapp.com/user/wardrobe/garment/${garment.id}&size=500x500`} alt={garment.garment_name} />
+                    <button>Print</button>
+
+                    </Popup>
+                    
+                    <div className='garment-info'>
+                    <h1>{garment.garment_name}</h1>
+                    <p>{garment.caption}</p>
+                    </div>
+                    
+                    
+                    
                 </div>
                 <nav className='garment-nav'>
                     <Popup trigger={<h4>Add A New Story</h4>} 
@@ -111,7 +127,7 @@ import axios from 'axios'
                                     <textarea 
                                         name="body"
                                         value={body} 
-                                        cols="42"
+                                        // cols="42"
                                         onChange={this.handleChange} 
                                         placeholder="body"
                                     /><br/>
@@ -121,7 +137,7 @@ import axios from 'axios'
                                         type="text"
                                         name="img_url"
                                         value={img_url}
-                                        placeholder="image url"
+                                        placeholder="img url"
                                         onChange={this.handleChange}
                                     /><br/>
                                     <b>Location</b><br/>
@@ -133,7 +149,7 @@ import axios from 'axios'
                                         placeholder="Location"
                                         onChange={this.handleChange}
                                     /><br/>
-                                    <input type='submit' className='submit-button' value='Make Post' />
+                                    <input type='submit' className='submit-button-g' value='Make Post' />
                                 </form>
                             </div>
                         </Popup>

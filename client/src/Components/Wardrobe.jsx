@@ -83,10 +83,11 @@ class Wardrobe extends Component {
             garmentComponents.push(
                 <Link to={`/user/wardrobe/garment/${garment.id}`}>
                     <div className='garment'>
-                        <img src={garment.img_url}/>
-                        <div>
+                        <img className='garment-img' src={garment.img_url}/>
+                        <div className='garment-wardrobe-info'>
                             <h3>{garment.garment_name}</h3>
                             {garment.prime_location}
+                            <p>{garment.caption}</p>
                         </div>
                         
                         {/* <p>{garment.category}</p>
@@ -100,7 +101,7 @@ class Wardrobe extends Component {
                 <div className='header'>
                     <div className='user'>
                         <img className='avatar' src={user.avatar_url} />
-                        <h1>{user.username}'s Wardrobe</h1>
+                        <h1 className='username'>{user.username}'s Wardrobe</h1>
                     </div>
                     
                     

@@ -1,11 +1,13 @@
 # HandMeDown
 
 # Problem Statement: 
-Clothes are being made of cheaper materials that do not last as long. As a consumer, purchasing cheaper clothes is appealing, so sustainable clothing has been tossed to the side. 
+The term 'sustainability' can be very misleading to consumers because it is not as straight forward as one would think. The term has been greatly misrepresented in the fashion industry as telling instead of showing. Fashion labels think it only suffices to allude to the fact that they are using 'green' materials in their products while not changing the process of making the products. Our focuse is on over production by the companies and mass consumption by the public. 
 
 
 # Solution:
-HandMeDown is a social media engagement project to promote sustainability in the fashion industry and encourage the preservation of lineage through garment, thus incentivizing customers to buy more sustainable clothing so they can preserve them. 
+To stop that we are targeting the consumers because they have a big responsibility on the what and how the companies proceed in creating a product.
+
+HandMeDown is a social media engagement project to promote sustainability in the fashion industry and encourage the preservation of lineage through garment, thus incentivizing customers to buy secondhand clothing instead of buying a brand new item. 
 
 A user can create an original QR code for each individual garment. The code can then be printed to iron-on paper and applied to the inside of the shirt (ideally by the back collar). This unique code will allow users to share where their garment is located, major life events/stories attached to the garment, and follow that garment’s stories as it is passed from user to user. MVP will focus on a target demo of young parents to share the stories of their children’s clothes - items that are usually owned for a short period of time ( 2 months on average ).
 

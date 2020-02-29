@@ -90,14 +90,14 @@ router.post("/new/:garment_id/:user_id", async (req, res, next) => {
         const garmentId = req.params.garment_id;
         const location = req.body.location;
         const body = req.body.body;
-        const imageUrl = req.body.imageUrl;
+        const img_url = req.body.img_url;
         const isPublic = req.body.isPublic;
         const response = await createHistory({
             userId: userId,
             garmentId: garmentId,
             location: location,
             body: body,
-            image_url: imageUrl,
+            img_url: img_url,
             isPublic: isPublic
         });
         res.json({
