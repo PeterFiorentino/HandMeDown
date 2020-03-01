@@ -54,11 +54,11 @@ router.get('/:id', async (req, res)  => {
 });
 
 
-router.post('/', upload.single('avatar_url'), async (req, res) => {
+router.post('/', async (req, res) => {
   let username = req.body.username
   let email = req.body.email
   let password = req.body.password
-  let avatar_url = `http://localhost:3100/upload/avatar_url/${req.body.avatar_url.replace('public/', '')}`
+  let avatar_url = req.body.avatar_url
   console.log('avatar', avatar_url)
   let isPublic = req.body.isPublic
   try {

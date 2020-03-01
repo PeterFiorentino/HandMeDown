@@ -86,11 +86,6 @@ i {
 }
 
 
-img {
-  height: 15%;
-  width: 15%;
-}
-
 .garment-input, .signup-input, .login-input {
   margin-bottom: 1em;
   width: 90%;
@@ -113,9 +108,6 @@ img {
   height: 40px;
   box-shadow: none;
 } */
-.popup-overlay {
-  /* width: 60%; */
-}
 
 .submit-button-g {
   background-color: #D88E4B;
@@ -127,14 +119,20 @@ img {
   border-radius: 5px;
 }
 
-.garment-form, .user-form, .history-form{
+.garment-form, .user-form {
   text-align: center;
- 
   padding: 2em;
   background-color: #9DB0A0;
   border: 10px solid #D88E4B
 }
 
+.history-form{
+  text-align: center;
+  padding: 2em;
+  border-radius: 10px;
+  background-color: #9DB0A0;
+  border: 10px solid rgb(78, 105, 82);
+}
 .garment-nav {
   display:flex;
   justify-content: center;
@@ -218,6 +216,7 @@ h3 {
 p {
   color: white;
   margin: auto;
+  font-size: 24px;
 }
 
 .redirect-buttons {
@@ -226,11 +225,15 @@ p {
 }
 
 .garment {
-  display: flex;
   border-radius: 10px;
   justify-content: left;
   align-items: center;  
   background-color: #9DB0A0;
+}
+
+.popup-content {
+  background: none;
+  border: none;
 }
 
 .history-post{
@@ -267,6 +270,7 @@ p {
 
 .garment-img, .history-img {
   border-radius: 10px;
+  width: 
   margin: 1em;
   padding: 1.5em;
 }
