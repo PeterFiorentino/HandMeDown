@@ -99,7 +99,7 @@ import axios from 'axios'
             <div className='main'>
                 <div className='header'>
                     <Popup
-                        trigger={<img src={garment.img_url}/>}
+                        trigger={<img className="profileImg" src={garment.img_url}/>}
                         modal
                         position="right center"
                     >

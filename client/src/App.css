@@ -270,6 +270,8 @@ p {
 
 .garment-img, .history-img {
   border-radius: 10px;
+  width: 10%;
+  height: 200px;
   margin: 1em;
   padding: 1.5em;
 }
@@ -278,6 +280,7 @@ p {
   border-radius: 10px;
   margin: auto;
   display: flex;
+  flex-wrap: wrap;
   width: 75%;
   background-color: rgb(78, 105, 82);
 }
@@ -297,6 +300,10 @@ p {
   padding: 1em;
   border-radius: 50px;
   background-color: #9DB0A0;
+}
+
+.profileImage {
+  width: 25%;
 }
 
 /* input {
