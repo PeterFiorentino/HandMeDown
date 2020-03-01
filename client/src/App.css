@@ -67,6 +67,12 @@ i {
   color: #D88E4B
 }
 
+p > i {
+  color: white
+}
+
+
+
 .user {
   width: 45%;
   padding: 30px;
@@ -230,6 +236,7 @@ p {
   align-items: center;  
   background-color: #9DB0A0;
   display: flex;
+  margin: 3%;
 }
 
 .popup-content {
@@ -279,7 +286,6 @@ p {
 .garments-container {
   border-radius: 10px;
   margin: auto;
-  display: flex;
   flex-wrap: wrap;
   width: 75%;
   background-color: rgb(78, 105, 82);
@@ -302,7 +308,7 @@ p {
   background-color: #9DB0A0;
 }
 
-.profileImage {
+.profileImg {
   width: 25%;
 }
 
