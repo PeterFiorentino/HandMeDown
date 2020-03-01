@@ -87,7 +87,7 @@ import axios from 'axios'
                 <div className='history-post'>
                     <img className='history-img' src={history.img_url} />
                     <div className='history-content'>
-                        <p>{history.location}</p><br/>
+                        <p><i>{history.location}</i></p><br/>
                         <p>{history.body}</p>
                     </div>
                     

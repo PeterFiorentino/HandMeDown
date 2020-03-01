@@ -20,7 +20,7 @@ class AuthContainer extends Component {
         })
     }
 
-    signupUser = async() => {
+    signupUser = async () => {
         // make network request to /auth/signup to register user
         console.log('Signing up user ...')
         try {
@@ -31,7 +31,7 @@ class AuthContainer extends Component {
         }
     }
 
-    loginUser = async  () => {
+    loginUser = async () => {
         // make network request to /auth/signup to register user
         try {
             const { data } = await axios.post('/api/auth/login', {username : this.state.username, password: this.state.password} )
