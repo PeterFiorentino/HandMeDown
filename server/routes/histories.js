@@ -115,6 +115,23 @@ router.post("/new/:garment_id/:user_id", async (req, res, next) => {
     }
 });
 
+router.delete("/:history_id", async (req, res) => {
+    try{
+        let history_id = req.params.history_id;
+        let response = await db.none(`DELETE FROM history WHERE id = $1`, history_id);
+        res.json({
+            status: "deleted",
+            message: "deleted",
+            payload: null
+        })
+    } catch (error) {
+        res.json({
+            status: "nope",
+            payload: error
+        })
+    }
+})
+
 //    rewriteHistory: edit a history by id
 // router.patch("/api/:history_id", async (req, res, next) => {
 //     try {        
