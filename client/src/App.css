@@ -229,6 +229,8 @@ p {
   justify-content: left;
   align-items: center;  
   background-color: #9DB0A0;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .popup-content {
