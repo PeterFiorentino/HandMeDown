@@ -1,7 +1,7 @@
 # HandMeDown
 
 # Setup Instructions
-`./frontend - npm start`<br />
+`cd ./frontend && npm install && npm start`<br />
 `./backend - npm run start:dev`
 
 ![alt text](https://www.peter-fiorentino.com/static/media/HandMeDown.c0ee1130.png)
